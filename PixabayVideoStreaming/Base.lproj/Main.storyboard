@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pixabay Videos-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Pixabay Videos" id="BYZ-38-t0r" customClass="ViewController" customModule="PixabayVideoStreaming" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFY-nl-z3A">
+                                <rect key="frame" x="0.0" y="64" width="414" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sld-nS-JOw">
+                                        <rect key="frame" x="331" y="10" width="75" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="p0Y-KB-0H6"/>
+                                        </constraints>
+                                        <state key="normal" title="Search"/>
+                                        <connections>
+                                            <action selector="searchButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YWv-hm-Ss9"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="search Pixabay video" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLU-VQ-q3U">
+                                        <rect key="frame" x="18" y="10" width="290" height="35"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="gLU-VQ-q3U" firstAttribute="top" secondItem="sld-nS-JOw" secondAttribute="top" id="82n-GC-d6R"/>
+                                    <constraint firstItem="sld-nS-JOw" firstAttribute="leading" secondItem="gLU-VQ-q3U" secondAttribute="trailing" constant="23" id="8pd-g9-4o5"/>
+                                    <constraint firstAttribute="height" constant="50" id="LjN-kX-z5a"/>
+                                    <constraint firstItem="sld-nS-JOw" firstAttribute="trailing" secondItem="zFY-nl-z3A" secondAttribute="trailingMargin" id="XVg-5d-BfF"/>
+                                    <constraint firstAttribute="bottom" secondItem="gLU-VQ-q3U" secondAttribute="bottom" constant="5" id="cAU-bR-mSR"/>
+                                    <constraint firstItem="gLU-VQ-q3U" firstAttribute="leading" secondItem="zFY-nl-z3A" secondAttribute="leading" constant="18" id="g1x-IL-Lyi"/>
+                                    <constraint firstItem="gLU-VQ-q3U" firstAttribute="bottom" secondItem="sld-nS-JOw" secondAttribute="bottom" id="rHx-YY-P7H"/>
+                                    <constraint firstItem="gLU-VQ-q3U" firstAttribute="top" secondItem="zFY-nl-z3A" secondAttribute="top" constant="10" id="wFU-7T-Q3R"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="u7d-uM-HEP">
+                                <rect key="frame" x="0.0" y="114" width="414" height="626"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oQt-gQ-MsF">
+                                    <size key="itemSize" width="178.5" height="178.5"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VideoListCollectionViewCell" id="7Jt-IQ-5mk" customClass="VideoListCollectionViewCell" customModule="PixabayVideoStreaming" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="200" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleImage" translatesAutoresizingMaskIntoConstraints="NO" id="ypL-vF-qMu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="221.66666666666666" height="150"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="ypL-vF-qMu" firstAttribute="leading" secondItem="7Jt-IQ-5mk" secondAttribute="leading" id="5Mn-Nx-UYy"/>
+                                            <constraint firstItem="ypL-vF-qMu" firstAttribute="centerX" secondItem="7Jt-IQ-5mk" secondAttribute="centerX" constant="10.75" id="Egz-rq-tiu"/>
+                                            <constraint firstAttribute="bottom" secondItem="ypL-vF-qMu" secondAttribute="bottom" constant="28.5" id="FdD-mL-Mpa"/>
+                                            <constraint firstItem="ypL-vF-qMu" firstAttribute="top" secondItem="7Jt-IQ-5mk" secondAttribute="top" id="Pga-oK-AAz"/>
+                                        </constraints>
+                                        <size key="customSize" width="200" height="150"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="ypL-vF-qMu" id="hR3-SX-ZDC"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VideoListCollectionViewSectionHeader" id="agC-BJ-3Bh">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular User Videos By Pixabay" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DL1-Ea-ZZx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="DL1-Ea-ZZx" secondAttribute="bottom" id="1Yp-FE-mji"/>
+                                        <constraint firstItem="DL1-Ea-ZZx" firstAttribute="leading" secondItem="agC-BJ-3Bh" secondAttribute="leading" id="Mrk-DU-G5H"/>
+                                        <constraint firstAttribute="trailing" secondItem="DL1-Ea-ZZx" secondAttribute="trailing" id="WEb-N1-nhp"/>
+                                        <constraint firstItem="DL1-Ea-ZZx" firstAttribute="top" secondItem="agC-BJ-3Bh" secondAttribute="top" id="f7g-r1-uLZ"/>
+                                    </constraints>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="fGu-gt-2Wj"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="8bT-y5-d9H"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="u7d-uM-HEP" firstAttribute="top" secondItem="zFY-nl-z3A" secondAttribute="bottom" id="1hV-PI-OAD"/>
+                            <constraint firstAttribute="trailing" secondItem="u7d-uM-HEP" secondAttribute="trailing" id="Gk8-25-KFn"/>
+                            <constraint firstItem="zFY-nl-z3A" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Nyp-X7-qCQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="u7d-uM-HEP" secondAttribute="bottom" constant="-4" id="RGO-0r-0X5"/>
+                            <constraint firstItem="u7d-uM-HEP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SVW-LZ-qwl"/>
+                            <constraint firstAttribute="trailing" secondItem="zFY-nl-z3A" secondAttribute="trailing" id="guO-nD-d8J"/>
+                            <constraint firstItem="zFY-nl-z3A" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="qwF-a1-q0x"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="collectionView" destination="u7d-uM-HEP" id="Ndh-ii-vMS"/>
+                        <outlet property="videoTextField" destination="gLU-VQ-q3U" id="qlg-NY-oXZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.637681159420293" y="35.054347826086961"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sampleImage" width="250" height="250"/>
+    </resources>
+</document>
